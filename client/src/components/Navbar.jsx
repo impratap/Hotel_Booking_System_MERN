@@ -17,7 +17,7 @@ const Navbar = () => {
         { name: 'Home', path: '/' },
         { name: 'Hotels', path: '/rooms' },
         { name: 'Experience', path: '/' },
-        { name: 'About', path: '/' },
+        { name: 'About', path: '/about' },
     ];
 
 
@@ -32,7 +32,7 @@ const Navbar = () => {
 
 
     useEffect(() => {
-        const handleScroll = () => {
+        
 
             if (location.pathname !== '/') {
                 setIsScrolled(true)
@@ -41,6 +41,8 @@ const Navbar = () => {
                 setIsScrolled(false)
             }
             setIsScrolled(prev => location.pathname !== '/' ? true : prev);
+
+            const handleScroll = () => {
 
             setIsScrolled(window.scrollY > 10);
         };
